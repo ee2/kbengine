@@ -23,7 +23,7 @@ along with KBEngine.  If not, see <http://www.gnu.org/licenses/>.
 #include "entitydef/method.hpp"
 #include "clients_remote_entity_method.hpp"
 #include "network/bundle.hpp"
-#include "server/eventhistory_stats.hpp"
+#include "helper/eventhistory_stats.hpp"
 
 #include "client_lib/client_interface.hpp"
 #include "../../server/baseapp/baseapp_interface.hpp"
@@ -85,7 +85,7 @@ PyObject* ClientsRemoteEntityMethod::callmethod(PyObject* args, PyObject* kwds)
 
 	if(otherClients_)
 	{
-		if(entities.size() == 0)
+		if(pEntity->witnessesSize() == 0)
 			S_Return;
 	}
 	
